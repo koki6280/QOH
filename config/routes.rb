@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'rooms/index'
+  get 'rooms/show'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   resources :events
+  resources :messages, only: [:create, :destroy]
+  resources :rooms, only: [:create, :index, :show]
   get 'users/:id/favorites' => 'users#favorites', as: 'user_favorites'
   get 'users/:id/graphs' => 'users#graphs', as: 'user_graphs'
   get 'search' => 'search#search'
