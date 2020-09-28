@@ -4,6 +4,7 @@
         <%= select_tag 'search[model]', options_for_select({ "ユーザー" => "user", "投稿一覧" => "diary"}) %>
         <%= submit_tag '検索' %></li>
     <% end %>
+<li><a href="#"><%= link_to "通知", notifications_path, class: "glyphicon glyphicon-bell" %></a></li>
 <li><a href="#"><%= link_to 'マイページ', user_path(current_user), class: 'glyphicon glyphicon-home home' %></a></li>
 <li><a href="#"><%= link_to '新規投稿', new_diary_path, class: 'glyphicon glyphicon-plus', data: {"turbolinks" => false} %></a></li>
 <li><a href="#"><%= link_to '投稿一覧', diaries_path, class: 'glyphicon glyphicon-book books' %></a></li>

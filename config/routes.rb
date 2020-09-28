@@ -17,8 +17,11 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   resources :events
+  resources :notifications, only: :index
   resources :messages, only: [:create, :destroy]
   resources :rooms, only: [:create, :index, :show]
+
+  delete '/notifications/destroy_all' => 'notifications#destroy_all'
   get 'users/:id/favorites' => 'users#favorites', as: 'user_favorites'
   get 'users/:id/graphs' => 'users#graphs', as: 'user_graphs'
   get 'search' => 'search#search'
