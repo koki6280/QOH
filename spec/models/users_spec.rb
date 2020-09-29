@@ -8,7 +8,7 @@ RSpec.describe 'Userモデル', type: :model do
 	         is_expected.to eq true
 	      end
 
-	    context 'nickname' do
+	    context 'nicknameカラム' do
 		      it '空欄でないこと' do
 		        user.nickname = ''
 		        is_expected.to eq false
@@ -20,7 +20,7 @@ RSpec.describe 'Userモデル', type: :model do
 		      end
 	    end
 
-	    context 'profile' do
+	    context 'profileカラム' do
 		      it '50文字以下であること' do
 		        user.profile = Faker::Lorem.characters(number: 51)
 		        is_expected.to eq false
@@ -48,16 +48,26 @@ RSpec.describe 'Userモデル', type: :model do
 	    	end
 	    end
 
-	    context 'Relationshipモデルとの関係' do
+	    context 'Followerモデル(Relationship)との関係' do
 	    	it '1:Nとなっている' do
 	    		expect(User.reflect_on_association(:follower).macro).to eq :has_many
+	    	end
+	    end
+
+	    context 'Followedモデル(Relationship)との関係' do
+	    	it '1:Nとなっている' do
 	    		expect(User.reflect_on_association(:followed).macro).to eq :has_many
 	    	end
 	    end
 
-	    context 'Notificationモデルとの関係' do
+	    context 'active_notificationsモデル(Notification)との関係' do
 	    	it '1:Nとなっている' do
 	    		expect(User.reflect_on_association(:active_notifications).macro).to eq :has_many
+	    	end
+	    end
+
+	    context 'Passsive_notificationsモデル(Notification)との関係' do
+	    	it '1:Nとなっている' do
 	    		expect(User.reflect_on_association(:passive_notifications).macro).to eq :has_many
 	    	end
 	    end
@@ -71,6 +81,12 @@ RSpec.describe 'Userモデル', type: :model do
 	    context 'Messageモデルとの関係' do
 	    	it '1:Nとなっている' do
 	    		expect(User.reflect_on_association(:messages).macro).to eq :has_many
+	    	end
+	    end
+
+	    context 'Eventモデルとの関係' do
+	    	it '1:Nとなっている' do
+	    		expect(User.reflect_on_association(:events).macro).to eq :has_many
 	    	end
 	    end
     end
