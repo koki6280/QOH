@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def create
 		@diary = Diary.find(params[:diary_id])
         @comment = @diary.comments.new(comment_params)
@@ -20,6 +22,8 @@ class CommentsController < ApplicationController
 	    end
 	       redirect_to request.referer
 	end
+
+	private
 
 	def comment_params
         params.require(:comment).permit(:comment)
