@@ -51,5 +51,7 @@ RSpec.describe '認証のテスト', type: :feature do
         is_expected.to have_content 'ログイン'
       end
     end
+
+
   end
 end
