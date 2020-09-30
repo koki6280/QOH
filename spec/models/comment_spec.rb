@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Diaryモデル', type: :model do
+RSpec.describe 'Commentモデル', type: :model do
 	describe 'バリデーション' do
 	  let(:user) { create(:user) }
       let(:diary) { create(:diary, user_id: user.id) }
