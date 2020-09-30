@@ -21,6 +21,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @user = current_user
   end
 
   def edit
@@ -42,6 +43,7 @@ class EventsController < ApplicationController
   end
 
   def my_calendar
+    @user = current_user
   end
 
   private

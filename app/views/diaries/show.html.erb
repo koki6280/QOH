@@ -19,7 +19,7 @@
       		　　 <span class="tag_area"><%= render 'diaries/tag_list', tag_list: @diary.tag_list %></span>
       	　　　 投稿日<%= @diary.created_at.strftime('%Y/%m/%d') %>
         			        <% if @diary.user == current_user %>
-                        <%= link_to "", diary_path(@diary), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-default glyphicon glyphicon-trash bt_del destroy_diary_#{@diary.id}" %>
+                        <%= link_to '', diary_path(@diary), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-default glyphicon glyphicon-trash bt_del destroy_diary_#{@diary.id}" %>
           			        <%= link_to '', edit_diary_path(@diary), class: "btn btn-default glyphicon glyphicon-wrench bt_del edit_diary_#{@diary.id}" %>
                       <% end %>
       			</p>

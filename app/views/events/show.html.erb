@@ -31,9 +31,11 @@
 		</div>
 		<div class="row">
 			<div class="pull-right">
+				<% if @user.id == current_user.id %>
 				<%= link_to 'スケジュール登録', new_event_path, class: 'btn btn-success' %>
 				<%= link_to '編集', edit_event_path(@event), class: 'btn btn-primary' %>
 				<%= link_to '削除', event_path(@event), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+				<% end %>
 			</div>
 		</div>
 </div>
