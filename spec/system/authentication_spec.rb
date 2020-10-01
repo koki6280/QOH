@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe '認証のテスト', type: :feature do
-  let(:user) { create(:user) }
   subject { page }
+
+  let(:user) { create(:user) }
 
   describe 'ユーザー認証のテスト' do
     context '新規会員登録のテスト' do
@@ -51,7 +52,5 @@ RSpec.describe '認証のテスト', type: :feature do
         is_expected.to have_content 'ログイン'
       end
     end
-
-
   end
 end

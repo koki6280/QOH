@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 50 }
 
   def create_notification_follow!(current_user)
-    temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
+    temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
     if temp.blank?
       notification = current_user.active_notifications.new(
         visited_id: id,
@@ -35,7 +35,7 @@ class User < ApplicationRecord
     follower.create(followed_id: user_id)
   end
 
-   def unfollow(user_id)
+  def unfollow(user_id)
     follower.find_by(followed_id: user_id).destroy
   end
 
