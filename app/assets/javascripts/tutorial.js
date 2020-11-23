@@ -16,31 +16,31 @@ $(function() {
 		 	},
 		 	{
 		 		element: '#introjs-step1',
-		 		intro: 'タグを入力してください',
+		 		intro: '『STEP1』タグを入力してください',
 		 	},
 		 	{
 		 		element: '#introjs-step2',
-		 		intro: '本文を入力してください',
+		 		intro: '『STEP2』本文を入力してください',
 		 	},
 		 	{
 		 		element: '#introjs-step3',
-		 		intro: '[運動時間]を入力してください',
+		 		intro: '『STEP3』[運動時間]を入力してください',
 		 	},
 		 	{
 		 		element: '#introjs-step4',
-		 		intro: '[睡眠時間]を入力してください',
+		 		intro: '『STEP4』[睡眠時間]を入力してください',
 		 	},
 		 	{
 		 		element: '#introjs-step5',
-		 		intro: '[喫煙本数]を入力してください',
+		 		intro: '『STEP5』[喫煙本数]を入力してください',
 		 	},
 		 	{
 		 		element: '#introjs-step6',
-		 		intro: '[飲酒量]を入力してください',
+		 		intro: '『STEP6』[飲酒量]を入力してください',
 		 	},
 		 	{
 		 		element: '#introjs-step7',
-		 		intro: 'クリックで画像を選んでください',
+		 		intro: '『STEP7』クリックで画像を選んでください',
 		 	},
 		 	{
 		 		element: '#introjs-step8',
